@@ -1,4 +1,4 @@
-# LLM Math Benchmark & RAG Suite
+## LLM Math Benchmark & RAG Suite
 A modular, researcher-grade Python benchmarking toolkit built to evaluate open-source Large Language Models (LLMs) on complex mathematical problem-solving.
 
 This framework systematically benchmarks model performance across 5 experimental conditions:
