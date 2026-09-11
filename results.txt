@@ -1,0 +1,11 @@
+MODEL NAME: deepseek-ai/DeepSeek-V4.1-Flash:novita
+Result:
+==============================================================
+Condition            | Correct  | Latency   
+--------------------------------------------------------------
+1. CoT (Base)        | False    | 3.29s
+2. RAG (Dense)       | True     | 3.18s
+3. RAG (Hybrid)      | True     | 3.00s
+4. Tools Only        | False    | 4.69s
+5. RAG + Tools       | True     | 5.24s
+==============================================================

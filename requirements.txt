@@ -1,0 +1,19 @@
+# Unified LLM API Interface
+litellm>=1.35.0
+
+# Vector Store & Document Parsing
+chromadb>=0.4.24
+langchain-community>=0.0.30
+langchain-text-splitters>=0.0.1
+pypdf>=4.2.0
+
+# Hybrid Search (Sparse BM25)
+rank-bm25>=0.2.2
+numpy>=1.26.0
+
+# Mathematical Symbolic Execution & Verification
+sympy>=1.12
+math-verify>=0.1.1
+
+# Environment Variable Management
+python-dotenv>=1.0.1
