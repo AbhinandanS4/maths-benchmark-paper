@@ -17,11 +17,17 @@ RAG + Tools: Full retrieval-augmented generation paired with dynamic tool execut
 The repository is organized into a clean 5-module structure to ensure modularity and reproducibility:
 
 ├── config.py             # Central configuration (Prompts, Tool Specs, Model Routing) 
+
 ├── tools.py              # Isolated Python REPL execution environment (SymPy / NumPy)
+
 ├── rag_dense.py          # PDF loading, chunking, and ChromaDB vector store management
+
 ├── rag_hybrid.py         # Custom math tokenizer + BM25 & Dense Reciprocal Rank Fusion (RRF)
+
 ├── evaluator.py          # Latex \boxed{} extraction and symbolic equivalence checker
+
 ├── main_benchmark.py     # Main benchmark orchestrator and latency/accuracy recorder
+
 ├── requirements.txt      # Project dependencies
 
 
