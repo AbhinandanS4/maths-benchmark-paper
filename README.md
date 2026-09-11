@@ -13,12 +13,10 @@ Tools Only: Python REPL code execution for algebraic and numeric verification (S
 
 RAG + Tools: Full retrieval-augmented generation paired with dynamic tool execution.
 
-System Architecture
+# System Architecture
 The repository is organized into a clean 5-module structure to ensure modularity and reproducibility:
 
-Plaintext
-.
-├── config.py             # Central configuration (Prompts, Tool Specs, Model Routing)
+├── config.py             # Central configuration (Prompts, Tool Specs, Model Routing) 
 ├── tools.py              # Isolated Python REPL execution environment (SymPy / NumPy)
 ├── rag_dense.py          # PDF loading, chunking, and ChromaDB vector store management
 ├── rag_hybrid.py         # Custom math tokenizer + BM25 & Dense Reciprocal Rank Fusion (RRF)
@@ -27,10 +25,10 @@ Plaintext
 ├── requirements.txt      # Project dependencies
 
 
-Benchmarking Assistant Setup Guide
+# Benchmarking Assistant Setup Guide
 Quick start guide for configuring and running the evaluation benchmarks.
 
-1. Environment Setup
+# 1. Environment Setup
 Create a .env file in the root directory (or update your existing one) and add your API key and LiteLLM settings:
 # Your API Key for the LLM Provider
 CUSTOM_API_KEY="your-api-key-here"
@@ -38,7 +36,7 @@ CUSTOM_API_KEY="your-api-key-here"
 # (Optional) If using a custom base URL for LiteLLM
 LITELLM_BASE_URL="https://your-custom-endpoint.com/v1"
 
-2. Configure Model Target (config.py)
+# 2. Configure Model Target (config.py)
 Open config.py and set your desired target model using the provider/model-name format expected by LiteLLM:
 
 # Specify your target model. MUST start with the provider prefix (e.g., openai/, huggingface/, groq/, anthropic/)
@@ -54,7 +52,7 @@ Groq: groq/llama-3.3-70b-versatile
 
 Anthropic: anthropic/claude-3-5-sonnet-20241022
 
-3. Configure LiteLLM Client (main_benchmark.py)
+# 3. Configure LiteLLM Client (main_benchmark.py)
 Open main_benchmark.py to configure your API key, target model, and base URL overrides:
 
 import os
@@ -77,7 +75,7 @@ response = litellm.completion(
     messages=[{"role": "user", "content": "Hello!"}]
 )
 
-4. Run the Benchmark
+# 4. Run the Benchmark
 Execute the benchmark entry point directly from your terminal:
 
 python3 main_benchmark.py
