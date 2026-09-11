@@ -1,4 +1,4 @@
-## LLM Math Benchmark & RAG Suite
+# LLM Math Benchmark & RAG Suite
 A modular, researcher-grade Python benchmarking toolkit built to evaluate open-source Large Language Models (LLMs) on complex mathematical problem-solving.
 
 This framework systematically benchmarks model performance across 5 experimental conditions:
@@ -34,18 +34,18 @@ The repository is organized into a clean 5-module structure to ensure modularity
 # Benchmarking Assistant Setup Guide
 Quick start guide for configuring and running the evaluation benchmarks.
 
-# 1. Environment Setup
+## 1. Environment Setup
 Create a .env file in the root directory (or update your existing one) and add your API key and LiteLLM settings:
-# Your API Key for the LLM Provider
+### Your API Key for the LLM Provider
 CUSTOM_API_KEY="your-api-key-here"
 
-# (Optional) If using a custom base URL for LiteLLM
+### (Optional) If using a custom base URL for LiteLLM
 LITELLM_BASE_URL="https://your-custom-endpoint.com/v1"
 
-# 2. Configure Model Target (config.py)
+## 2. Configure Model Target (config.py)
 Open config.py and set your desired target model using the provider/model-name format expected by LiteLLM:
 
-# Specify your target model. MUST start with the provider prefix (e.g., openai/, huggingface/, groq/, anthropic/)
+## Specify your target model. MUST start with the provider prefix (e.g., openai/, huggingface/, groq/, anthropic/)
 MODEL_NAME = "huggingface/deepseek-ai/DeepSeek-V4.1-Flash:novita"
 
 Common Provider Examples:
@@ -58,7 +58,7 @@ Groq: groq/llama-3.3-70b-versatile
 
 Anthropic: anthropic/claude-3-5-sonnet-20241022
 
-# 3. Configure LiteLLM Client (main_benchmark.py)
+## 3. Configure LiteLLM Client (main_benchmark.py)
 Open main_benchmark.py to configure your API key, target model, and base URL overrides:
 
 import os
@@ -66,14 +66,14 @@ import litellm
 from dotenv import load_dotenv
 from config import MODEL_NAME
 
-# 1. Load environment variables
+### 1. Load environment variables
 load_dotenv()
 
-# 2. Assign API Key and optional Base URL
+### 2. Assign API Key and optional Base URL
 api_key = os.getenv("CUSTOM_API_KEY")
 base_url = os.getenv("LITELLM_BASE_URL")  # Set if using a custom gateway/proxy
 
-# 3. Configure LiteLLM parameters or call completion
+### 3. Configure LiteLLM parameters or call completion
 response = litellm.completion(
     model=MODEL_NAME,
     api_key=api_key,
@@ -81,7 +81,7 @@ response = litellm.completion(
     messages=[{"role": "user", "content": "Hello!"}]
 )
 
-# 4. Run the Benchmark
+### 4. Run the Benchmark
 Execute the benchmark entry point directly from your terminal:
 
 python3 main_benchmark.py
