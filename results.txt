@@ -9,3 +9,15 @@ Condition            | Correct  | Latency
 4. Tools Only        | False    | 4.69s
 5. RAG + Tools       | True     | 5.24s
 ==============================================================
+
+# MODEL NAME: Qwen/Qwen2.5-Math-7B:featherless-ai
+# Result:
+==============================================================
+Condition            | Correct  | Latency
+--------------------------------------------------------------
+1. CoT (Base)        | False    | 9.17s
+2. RAG (Dense)       | False    | 23.68s
+3. RAG (Hybrid)      | False    | 3.48s
+4. Tools Only        | False    | 22.89s
+5. RAG + Tools       | False    | 23.58s
+==============================================================
